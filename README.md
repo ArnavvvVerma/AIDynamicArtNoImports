@@ -1,40 +1,38 @@
-# 🧠 AI Dynamic Art NFT (On-Chain, No Imports / No Constructor)
+# 🧠 AI Dynamic Art NFT (Flow Blockchain)
 
-This project contains a **fully on-chain NFT smart contract** written in **pure Solidity**, designed for **AI-generated art with dynamic metadata**.
+This project contains a **fully on-chain NFT smart contract** written in **pure Solidity-style syntax (conceptual reference)** — designed for **AI-generated art with dynamic metadata**, adapted for deployment on the **Flow blockchain**.
 
-The NFTs are created and rendered directly from the blockchain — no off-chain storage or dependencies.  
-Every token produces its own evolving SVG artwork, which changes subtly based on block data such as timestamps and hashes.
+The NFTs represent **AI-created generative art**, evolving in real time based on blockchain data.  
+Every token renders its own metadata and SVG image on-chain, emphasizing **decentralization and permanence**.
 
 ---
 
 ## 📜 Smart Contract Details
 
-- **Network:** Ethereum-compatible  
-- **Deployed Address:** [`0x0fFE1F20a335944f7934aA53D2629bBfC9d94E4e`](https://etherscan.io/address/0x0fFE1F20a335944f7934aA53D2629bBfC9d94E4e)  
-- **Name:** AI Dynamic Art  
+- **Blockchain:** Flow  
+- **Deployed Address:** `0x0fFE1F20a335944f7934aA53D2629bBfC9d94E4e`  
+- **Contract Name:** AI Dynamic Art  
 - **Symbol:** AIDA  
-- **Standard:** ERC-721 (minimal, fully self-contained)  
+- **Standard:** NFT (Flow-compatible conceptual model)  
 - **Dependencies:** None (no imports)  
 - **Constructor:** None  
-- **Mint Function:** No input fields (`mint()` auto-mints to `msg.sender`)
+- **Input Fields:** None (fully autonomous minting)
 
 ---
 
 ## 🎨 Features
 
 ✅ **Pure On-Chain Metadata**  
-Each token’s metadata and image are generated entirely within the smart contract — stored as Base64 JSON + SVG.
+Each NFT stores metadata and images on-chain, using encoded Base64 JSON + SVG.  
+No IPFS or centralized storage required.
 
 ✅ **Dynamic Artwork**  
-Art dynamically evolves using blockchain data:
-- `block.timestamp`
-- `blockhash`
-- `block.coinbase`
+Each artwork evolves based on live blockchain data — timestamp, block hash, or random seed — creating unique traits and styles per mint.
 
-✅ **No External Calls / No Storage Reads for Metadata**  
-All art data is computed in real-time, ensuring maximum transparency and verifiability.
+✅ **No External Dependencies**  
+All logic lives inside the smart contract. No constructor, no imports, no parameters.
 
 ✅ **Simple Minting**  
-Anyone can mint by calling:
+Mint with a single call:
 ```solidity
 mint()
